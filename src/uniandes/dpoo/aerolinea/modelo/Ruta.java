@@ -9,6 +9,8 @@ public class Ruta{
 	private String horaSalida;
 	private String horaLlegada;
 	private String codigoRuta;
+	private Aeropuerto origen;
+	private Aeropuerto destino;
 	public int getDuracion;
 	
 	// constructor
@@ -16,6 +18,8 @@ public class Ruta{
 		this.horaSalida= horaSalida;
 		this.horaLlegada=horaLlegada;
 		this.codigoRuta = codigoRuta;
+		this.destino = destino;
+		this.origen = origen;
 	}
 	
 	public String getCodigoRuta() {
@@ -23,11 +27,11 @@ public class Ruta{
 	}
 	
 	public Aeropuerto getOrigen() {
-		return null;
+		return origen;
 	}
 	
 	public Aeropuerto getDestino() {
-		return null;
+		return destino;
 	}
 	
 	public String getHoraSalida() {
@@ -39,7 +43,21 @@ public class Ruta{
 	}
 	
 	public int getDuracion() {
-		return getDuracion;
+		
+		int hSalida = getHoras(horaSalida);
+		int mSalida = getMinutos(horaSalida);
+		int hLlegada = getHoras(horaLlegada);
+		int mLlegada = getMinutos(horaLlegada);
+		
+		if (hSalida> hLlegada) {
+			hLlegada += 24;
+		}
+		
+		int totalminSalida= 60*hSalida + mSalida;
+		int totalminLlegada= 60*hLlegada + mLlegada;
+		
+		return (totalminLlegada - totalminSalida);
+		
 	}
     // TODO completar
 

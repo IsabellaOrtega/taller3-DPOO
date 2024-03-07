@@ -9,24 +9,30 @@ import uniandes.dpoo.aerolinea.tiquetes.Tiquete;
 public class Vuelo{
 	//atributos 
 	private String fecha;
+	private Ruta ruta;
+	private Avion avion;
+	private Collection<Tiquete> tiquetes;
 	
 	//constructor
 	public Vuelo(Ruta ruta, String fecha, Avion avion) {
 		this.fecha= fecha;
+		this.ruta = ruta;
+		this.avion = avion;
+		
 	}
 	
 	//funciones
 	public Ruta getRuta() {
-		return null;
+		return ruta;
 	}
 	public String getFecha() {
 		return fecha;
 	}
 	public Avion getAvion() {
-		return null;
+		return avion;
 	}
 	public Collection<Tiquete> getTiquetes(){
-		return null;
+		return tiquetes;
 	}
 	public int venderTiquetes(Cliente cliente, CalculadoraTarifas calculadores, int cantidad) {
 		return 1;

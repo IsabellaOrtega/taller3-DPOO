@@ -13,7 +13,7 @@ public class ClienteNatural extends Cliente {
 	
 	//funciones
 	public String getIdentificador() {
-		return null;
+		return super.getIdentificador();
 		
 	}
 	public String getTipoCliente() {

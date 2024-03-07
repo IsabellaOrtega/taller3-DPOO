@@ -26,14 +26,14 @@ public class ClienteCorporativo extends Cliente
 		return nombreEmpresa;
 	}
 	public int getTamanoEmpresa() {
-		return 1;
+		return tamanoEmpresa;
 	}
 	public String getTipoCliente() {
 		return CORPORATIVO;
 		
 	}
 	public String getIdentificador() {
-		return null;
+		return super.getIdentificador();
 	}
 
 
